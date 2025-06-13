@@ -1,7 +1,10 @@
 package Views;
 
 public class LandingPage {
-    public static String[] options = {
+    private static String headingMessage = "Welcome to the Doso\uD83D\uDC7E Market!";
+    private static String promptMessage = "Please type the option's NUMBER to navigate!";
+
+    private static String[] options = {
             "Sign in",
             "Sign up",
             "Continue to market"
@@ -11,5 +14,9 @@ public class LandingPage {
             "Signing up...",
             "Continuing to market..."
     };
-
+    public static void render() {
+        Printer.print(headingMessage);
+        Printer.print(promptMessage);
+        Printer.listOptions(LandingPage.options);
+    }
 }
