@@ -1,7 +1,4 @@
-import Views.LandingPage;
-import Views.LogInView;
-import Views.Printer;
-import Views.Reader;
+import Views.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,6 +6,8 @@ public class Main {
         int routeNumber = Reader.readRouteNumber(LandingPage.routes.length);
         Printer.print(LandingPage.routes[routeNumber]);
 
-        LogInView.render();
+        SignInView.render();
+        SignUpView.render();
+        MarketView.render();
     }
 }
