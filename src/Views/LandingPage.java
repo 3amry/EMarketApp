@@ -9,10 +9,10 @@ public class LandingPage {
             "Sign up",
             "Continue to market"
     };
-    public static String[] routes = {
-            "Signing in...",
-            "Signing up...",
-            "Continuing to market..."
+    public static Runnable[] routes = new Runnable[] {
+            SignInView::render,
+            SignUpView::render,
+            MarketView::render,
     };
     public static void render() {
         Printer.print(headingMessage);

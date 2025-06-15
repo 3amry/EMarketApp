@@ -9,6 +9,6 @@ public class SignUpView {
         Printer.print("created username is " + username);
         password = Reader.readInput("Please enter your password");
         Printer.print("created password is " + password);
-        Printer.print("Glad to have you " + username);
+        Printer.print("Glad to have you here " + username + '!');
     }
 }
