@@ -15,8 +15,7 @@ public class LandingPage {
             MarketView::render,
     };
     public static void render() {
-        Printer.print(headingMessage);
-        Printer.print(promptMessage);
-        Printer.listOptions(LandingPage.options);
+        System.out.println(headingMessage);
+        System.out.println(promptMessage);
     }
 }

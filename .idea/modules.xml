@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Doso_Market.iml" filepath="$PROJECT_DIR$/Doso_Market.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EMarketApp.iml" filepath="$PROJECT_DIR$/EMarketApp.iml" />
     </modules>
   </component>
 </project>

@@ -2,10 +2,10 @@ import Views.*;
 
 public class Main {
     public static void main(String[] args) {
-        LandingPage.render();
+        Console.run();
 
-        int routeNumber = Reader.readRouteNumber(LandingPage.routes.length);
-
-        LandingPage.routes[routeNumber].run();
+//        LandingPage.render();
+//        int routeNumber = Console.readChoice();
+//        LandingPage.routes[routeNumber].run();
     }
 }
