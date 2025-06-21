@@ -14,6 +14,8 @@ public class Console {
         while (!exit) {
             listOptions();
             readChoice();
+            if (exit) break;
+
             updateMenu(options[selectedIndex]);
         }
 
@@ -59,30 +61,26 @@ public class Console {
 
             if (choice.equalsIgnoreCase("exit")) {
                 exit = true;
-                break;
+                return;
             }
-
-            try {
+            else {
+                try {
                     selectedIndex = Integer.parseInt(choice) - 1;
                     if (selectedIndex < 0 || selectedIndex > options.length - 1) {
                         System.out.println("---------------------------------------");
                         System.out.println("Please enter an integer between 1 and "
                                 + options.length);
                     }else break;
-            }catch (NumberFormatException e) {
+                }catch (NumberFormatException e) {
                     System.out.println("Invalid number." +
                             " Please enter an integer between 1 and " + options.length);
                 }
-
+            }
         }
     }
 
     public static String readOption(String prompt) {
         System.out.print(prompt);
         return scanner.nextLine();
-    }
-
-    public static void setOptions(String[] options) {
-        Console.options = options;
     }
 }
