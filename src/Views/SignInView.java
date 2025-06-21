@@ -20,7 +20,6 @@ public class SignInView {
             System.out.println("Error: Wrong username or password.");
             return false;
         }
-
     }
     private static void prompt() {
         System.out.println("Please type your username and password");

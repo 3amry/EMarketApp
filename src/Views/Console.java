@@ -35,6 +35,12 @@ public class Console {
                     options = new String[]{"Go home"};
                 }
             }
+           case "Sign up" -> {
+               System.out.println("Please fill the following info to sign up!");
+                SignUpView.signUp();
+               System.out.println("Success!!");
+               System.out.println("Please sign in to continue.");
+           }
         }
     }
 
@@ -46,7 +52,7 @@ public class Console {
         System.out.println("---------------------------------------");
     }
 
-    public static int readChoice() {
+    public static void readChoice() {
         while (!exit) {
             System.out.print("Choose an option (1-" + options.length + ") or type 'exit': ");
             String choice = scanner.nextLine();
@@ -69,7 +75,6 @@ public class Console {
                 }
 
         }
-        return selectedIndex;
     }
 
     public static String readOption(String prompt) {

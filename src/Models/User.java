@@ -4,14 +4,14 @@ import java.util.Objects;
 
 public class User {
     private final String email;
-    private final String id;
+    private final int id;
     private String username;
     private String password;
     private boolean isAdmin = false;
 
-    public User(String email, String id, String username, String password, boolean isAdmin) {
+    public User(String email, String username, String password, boolean isAdmin) {
         this.email = email;
-        this.id = id;
+        this.id = hashCode();
         this.username = username;
         this.password = password;
         this.isAdmin = isAdmin;
@@ -60,6 +60,6 @@ public class User {
     }
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(email);
     }
 }
