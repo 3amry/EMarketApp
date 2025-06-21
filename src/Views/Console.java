@@ -1,4 +1,5 @@
 package Views;
+
 import java.util.Scanner;
 
 public class Console {
@@ -23,16 +24,17 @@ public class Console {
 
     private static void updateMenu(String choice) {
         switch (choice) {
-            case "Reset":
-                options = new String[] {
-                        "Sign in",
-                        "Sign up",
-                };
-
-            case "Sign in":
-                options = new String[] {
-                        "wow you are signed in"
-                };
+            case "Sign out", "Go home" -> options = new String[]{
+                    "Sign in",
+                    "Sign up",
+            };
+            case "Sign in" -> {
+                if (SignInView.signIn()) {
+                    options = SignInView.signInOptions;
+                } else {
+                    options = new String[]{"Go home"};
+                }
+            }
         }
     }
 
@@ -48,27 +50,30 @@ public class Console {
         while (!exit) {
             System.out.print("Choose an option (1-" + options.length + ") or type 'exit': ");
             String choice = scanner.nextLine();
-            if (choice.equalsIgnoreCase("exit"))
+
+            if (choice.equalsIgnoreCase("exit")) {
                 exit = true;
-            else {
-                try {
+                break;
+            }
+
+            try {
                     selectedIndex = Integer.parseInt(choice) - 1;
                     if (selectedIndex < 0 || selectedIndex > options.length - 1) {
                         System.out.println("---------------------------------------");
                         System.out.println("Please enter an integer between 1 and "
                                 + options.length);
                     }else break;
-                }catch (NumberFormatException e) {
+            }catch (NumberFormatException e) {
                     System.out.println("Invalid number." +
                             " Please enter an integer between 1 and " + options.length);
                 }
-            }
+
         }
         return selectedIndex;
     }
 
-    public static String readInput(String prompt) {
-        System.out.println(prompt);
+    public static String readOption(String prompt) {
+        System.out.print(prompt);
         return scanner.nextLine();
     }
 
