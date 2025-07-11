@@ -1,6 +1,6 @@
-package Views;
+package views;
 
-import Controllers.SignInController;
+import controllers.SignInController;
 
 public class SignInView {
     private static String username;

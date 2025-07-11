@@ -1,4 +1,4 @@
-package Controllers;
+package controllers;
 
 public class SignInController {
     public static boolean signIn(String userName, String password) {

@@ -1,6 +1,6 @@
-package Views;
+package views;
 
-import Controllers.SignUpController;
+import controllers.SignUpController;
 
 public class SignUpView {
     public static void signUp() {

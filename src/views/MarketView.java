@@ -1,4 +1,4 @@
-package Views;
+package views;
 
 public class MarketView {
     public static void render() {
