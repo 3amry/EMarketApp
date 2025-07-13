@@ -1,6 +1,7 @@
 package views;
 
 import controllers.SignInController;
+import models.User;
 
 public class SignInView {
     private static String username;
@@ -11,15 +12,9 @@ public class SignInView {
             "Account setting"
     };
 
-    public static boolean signIn() {
+    public static User signIn() {
         prompt();
-        if (SignInController.signIn(username, password)) {
-            System.out.println("Welcome back " + username + '!');
-            return true;
-        } else {
-            System.out.println("Error: Wrong username or password.");
-            return false;
-        }
+        return SignInController.signIn(username, password);
     }
     private static void prompt() {
         System.out.println("Please type your username and password");

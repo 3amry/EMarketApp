@@ -1,8 +1,11 @@
 package views;
 
+import models.User;
+
 import java.util.Scanner;
 
 public class Console {
+    private static User currentUser = null;
     private static boolean exit = false;
     private static String[] options = new String[] {
             "Sign in",
@@ -31,7 +34,8 @@ public class Console {
                     "Sign up",
             };
             case "Sign in" -> {
-                if (SignInView.signIn()) {
+                currentUser = SignInView.signIn();
+                if (currentUser != null) {
                     options = SignInView.signInOptions;
                 } else {
                     options = new String[]{"Go home"};
@@ -48,6 +52,8 @@ public class Console {
 
     public static void listOptions() {
         System.out.println("====== MENU ======");
+        if (currentUser != null)
+            System.out.println("Logged in as " + currentUser.getUsername());
         for (int i = 0; i < options.length; i++)
             System.out.println(i+1 + "- " + options[i]);
         System.out.println("Type 'exit' to quit the program.");
